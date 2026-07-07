@@ -1,16 +1,14 @@
 {
   "server": {
-    "host": "",
-    "port": 25565,
+    "host": "leaked.aternos.me",
+    "port": 48035,
     "version": false
   },
 
   "account": {
-    "username": "",
+    "username": "WhoLeakedIP?",
     "type": "offline"
   },
-
-  "loginCommand": "/login AFK1",
 
   "reconnectDelay": 10000
 }
