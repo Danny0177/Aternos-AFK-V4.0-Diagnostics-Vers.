@@ -10,24 +10,14 @@ function createBot() {
         version: settings.server.version
     });
 
-
     bot.once("spawn", () => {
         console.log("Bot connected!");
-
-        if (settings.loginCommand) {
-            setTimeout(() => {
-                bot.chat(settings.loginCommand);
-                console.log("Login command sent");
-            }, 2000);
-        }
     });
-
 
     bot.on("end", () => {
         console.log("Disconnected. Reconnecting...");
         setTimeout(createBot, settings.reconnectDelay);
     });
-
 
     bot.on("error", err => {
         console.log("Bot error:", err.message);
