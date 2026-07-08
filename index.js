@@ -10,11 +10,25 @@ const settings = require("./settings.json");
 
 function createBot() {
 
+    console.log("Creating bot...");
+
     const bot = mineflayer.createBot({
         host: settings.server.host,
         port: settings.server.port,
         username: settings.account.username,
         version: settings.server.version
+    });
+
+    bot.on("connect", () => {
+        console.log("TCP connected");
+    });
+
+    bot.on("inject_allowed", () => {
+        console.log("Protocol injected");
+    });
+
+    bot.on("login", () => {
+        console.log("Login packet received");
     });
 
     bot.once("spawn", () => {
@@ -25,27 +39,15 @@ function createBot() {
         console.log("Kicked reason:", reason);
     });
 
+    bot.on("error", err => {
+        console.log("Bot error:", err);
+    });
+
     bot.on("end", reason => {
         console.log("Disconnected reason:", reason);
         console.log("Reconnecting...");
         setTimeout(createBot, settings.reconnectDelay);
     });
-
 }
 
 createBot();
-bot.on("connect", () => {
-    console.log("TCP connected");
-});
-
-bot.on("login", () => {
-    console.log("Login packet received");
-});
-
-bot.on("inject_allowed", () => {
-    console.log("Protocol injected");
-});
-
-bot.on("error", err => {
-    console.log("Bot error:", err);
-});
