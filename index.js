@@ -214,27 +214,29 @@ spawnTimeout = setTimeout(() => {
 }, 60000);
 
 
-// ----------------------------------------------
-// Disconnect handling
-// ----------------------------------------------
+    // ----------------------------------------------
+    // Disconnect handling
+    // ----------------------------------------------
 
-bot.on("end", reason => {
+    bot.on("end", reason => {
 
-    log(
-        "Disconnected: " +
-        reason
-    );
+        log(
+            "Disconnected: " +
+            reason
+        );
 
-    scheduleReconnect();
+        scheduleReconnect();
 
-});
+    });
 
 
-bot.on("close", () => {
+    bot.on("close", () => {
 
-    log("Connection closed");
+        log("Connection closed");
 
-});
+    });
+
+}
 
 
 // --------------------------------------------------
@@ -268,4 +270,3 @@ function scheduleReconnect() {
 // --------------------------------------------------
 
 createBot();
-
