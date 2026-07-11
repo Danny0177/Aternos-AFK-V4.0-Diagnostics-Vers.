@@ -85,7 +85,6 @@ setTimeout(() => {
    bot.on("connect", () => {
     log("TCP connected");
 
-    clearTimeout(connectionTimeout);
 
     if (bot._client && bot._client.socket) {
 
