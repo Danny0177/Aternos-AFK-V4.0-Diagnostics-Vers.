@@ -51,22 +51,53 @@ function createBot() {
 
     log("Creating bot...");
 
-    bot = mineflayer.createBot({
-        host: settings.server.host,
-        port: settings.server.port,
-        username: settings.account.username,
-        version: settings.server.version
-    });
+    log(`Attempting connection to ${settings.server.host}:${settings.server.port}`);
+
+bot = mineflayer.createBot({
+    host: settings.server.host,
+    port: settings.server.port,
+    username: settings.account.username,
+    version: settings.server.version
+});
+
+setTimeout(() => {
+
+    if (!bot._client || !bot._client.socket || bot._client.socket.destroyed) {
+
+        log("Connection never established. Restarting bot...");
+
+        try {
+            bot.quit();
+        } catch {}
+
+        scheduleReconnect();
+
+    }
+
+}, 30000);
 
 
     // ----------------------------------------------
     // Connection stages
     // ----------------------------------------------
 
-    bot.on("connect", () => {
-        log("TCP connected");
-    });
+    bbot.on("connect", () => {
 
+    log("TCP connected");
+
+    if (bot._client && bot._client.socket) {
+
+        bot._client.socket.on("timeout", () => {
+            log("Socket timeout");
+        });
+
+        bot._client.socket.on("error", err => {
+            log("Socket error: " + err.message);
+        });
+
+    }
+
+});
 
     bot.on("inject_allowed", () => {
         log("Protocol injected");
