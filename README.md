@@ -1,6 +1,42 @@
-# Aternos-AFK
-# A Simple, handmade bot to use to keep Aternos servers online.
-# Inspired by Sloobos' AFK Bot, but re-coded from the ground up to be lightwieght to work more reliably on Free Render profiles
-# The bot tries to avoid unnecessary movement data, so servers that don't punish AFK will benefit
+# Aternos AFK Bot
 
-# Warning: If there are Anti-AFK features, add an exclusion to this bot's Username, or use Sloobos' bot, built in with extra Anti-AFK avoidance features
+A lightweight Minecraft AFK bot designed to keep an Aternos Minecraft server online using Mineflayer and Render.
+
+The goal of this project is reliability and simplicity:
+- No heavy anti-AFK systems
+- No movement/pathfinding
+- Automatic reconnects
+- Low CPU and RAM usage
+
+---
+
+## Features
+
+✅ Works with offline-mode servers  
+✅ Supports Paper servers  
+✅ Automatic reconnect after disconnects  
+✅ Handles Aternos restarts  
+✅ Accepts required resource packs  
+✅ Lightweight keep-alive activity  
+✅ Render Web Service compatible  
+✅ Optional login command support  
+
+---
+
+## Requirements
+
+- Node.js 18+
+- A Minecraft server
+- Mineflayer-compatible version
+- Render account (for hosting)
+
+---
+
+# Setup
+
+## 1. Install dependencies
+
+Run:
+
+```bash
+npm install
