@@ -81,23 +81,28 @@ function createBot() {
     // Resource pack
     // ----------------------------------------------
 
-    bot.on("resourcePack", () => {
+    bot.on("resourcePack", (url, hash) => {
 
-        if (settings.resourcePack.accept) {
+    log("Resource pack requested");
+    log(`URL: ${url}`);
+    log(`Hash: ${hash}`);
 
-            log("Resource pack requested. Accepting...");
 
-            bot.acceptResourcePack();
+    if (settings.resourcePack.accept) {
 
-        } else {
+        log("Accepting resource pack...");
 
-            log("Resource pack requested. Declining...");
+        bot.acceptResourcePack();
 
-            bot.denyResourcePack();
+    } else {
 
-        }
+        log("Declining resource pack...");
 
-    });
+        bot.denyResourcePack();
+
+    }
+
+});
 
 
     // ----------------------------------------------
