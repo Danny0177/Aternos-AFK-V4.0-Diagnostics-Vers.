@@ -2,7 +2,7 @@
   "server": {
     "host": "leaked.aternos.me",
     "port": 48035,
-    "version": false
+    "version": "1.21.11"
   },
 
   "account": {
