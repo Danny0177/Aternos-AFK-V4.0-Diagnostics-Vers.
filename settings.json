@@ -2,9 +2,9 @@
   "server": {
     "host": "example.aternos.me",
     "port": 19132,
-    "version": "1.20.1"
+    "version": "1.20.1" // Do not change the version here unless you know mineflayer supports it
   },
-// Do not change the version here unless you know mineflayer supports it
+
   "account": {
     "username": "AFK-V6.H",
     "type": "offline"
