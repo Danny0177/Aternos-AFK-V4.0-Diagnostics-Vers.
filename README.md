@@ -1,4 +1,5 @@
-# Aternos AFK Bot - Debug Edition A lightweight Minecraft AFK bot designed to keep an Aternos Minecraft server online using Mineflayer and Railway, Including comprehensive debug abilities to improve upon base bot.
+# Aternos AFK Bot 
+- Debug Edition A lightweight Minecraft AFK bot designed to keep an Aternos Minecraft server online using Mineflayer and Railway, Including comprehensive debug abilities to improve upon base bot.
 
 I have aimed here for reliability and simplicity:
 No heavy anti-AFK systems
