@@ -1,12 +1,12 @@
 {
   "server": {
-    "host": "leaked.aternos.me",
-    "port": 48035,
-    "version": "1.21.11"
+    "host": "example.aternos.me",
+    "port": [Port],
+    "version": "1.20.1"
   },
 
   "account": {
-    "username": "AFK-V15",
+    "username": "AFK-V6.H",
     "type": "offline"
   },
 
