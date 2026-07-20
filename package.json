@@ -1,7 +1,7 @@
 {
   "name": "lightweight-afk-bot",
   "version": "2.0.0",
-  "description": "A lightweight Minecraft AFK bot designed for Aternos using Mineflayer and Render.",
+  "description": "A lightweight Minecraft AFK bot designed for Aternos using Mineflayer and Railway/Render.",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
